@@ -1,7 +1,10 @@
 .nav-enlace {
-    font-size: 20px;
-    font-family: Arial, Helvetica, sans-serif;
-    text-decoration: none;
-    padding: 0px 20px;
-    display: inline-block;
+    padding: 10px 30px;
+    margin: 0px;
+    background-color: rgb(97, 28, 177);
+    display: flex;
+}
+
+.botones {
+   display: block;
 }
