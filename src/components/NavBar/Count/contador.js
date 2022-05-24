@@ -1,23 +1,36 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Button from "../button/button"
 
 const Contador = (props) => {
    
-    const state = useState(0)
-    
-    const count = state[0]
-    const setCount = state[1]
+    const [count, setCount] = useState(0)
+
+    console.log(useEffect)
+
+    useEffect(() => {
+        console.log('Prueba')
+
+        return () => {
+            console.log('Prueba 3')
+        }
+    }, [])
 
     const decrement = () => {
-        setCount(count - 1)
+
+        for(let i=0; i < 5; i++) {
+            setCount((count) => count - 1)
+        }
+
     }
 
     const increment = () => {
         setCount(count + 1)
     }
+
+    console.log('prueba 2')
     
     return (
-        <div style={{display: "flex", paddingLeft: '50px'}}> 
+        <div style={{display: "flex"}}> 
 
             <Button handleClick={decrement} label='-' color='red'/>
             <h1>{count}</h1>
