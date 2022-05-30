@@ -6,18 +6,22 @@ import ItemListContainer from './components/itemListContainer/itemListContainer'
 import ContadorClass from './components/NavBar/countClass/contadorClass';
 import ItemCount from './components/itemCount/itemCount'
 
+
 function App() {
    
 
   return (
     <div className="App">
+      <div className='container'>
      
         <NavBar />
         <ItemListContainer greeting='¡Bienvenidos!' />
-        
+        <Contador />
+        <ContadorClass />
         <ItemCount />
+
         
-        
+      </div>  
     </div>
   );
 }

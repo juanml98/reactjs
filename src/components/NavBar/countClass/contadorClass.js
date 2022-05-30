@@ -1,5 +1,5 @@
 import { Component } from "react";
-import Button from "../button/button";
+
 
 class ContadorClass extends Component {
     constructor(props) {
@@ -8,9 +8,13 @@ class ContadorClass extends Component {
     }
 
     decrement = () => {
-        this.setState({
-            count: this.state.count - 1
-        })
+        if (this.state.count > 0) {
+            this.setState({
+                count: this.state.count - 1
+            })
+        }else{
+            console.log('negativo')
+        }
     }
 
     increment = () => {
@@ -19,16 +23,24 @@ class ContadorClass extends Component {
         })
     }
 
+    eliminar = () => {
+        this.setState({
+            count: 0
+        })
+    }
+
     render () {
         return (
             <div style={{display: 'flex'}}>
-                <Button handleClick={this.decrement} label='-' color='red'>
+                <button className="btn btn-danger mx-3" onClick={this.decrement} label='-' color='red'>
                 -
-                </Button>
+                </button>
                 <h1>{this.state.count}</h1>
-                <Button handleClick={this.increment} label='+' color='green'>
+                <button className="btn btn-success mx-3" onClick={this.increment} label='+' color='green'>
                 +
-                </Button>
+                </button>
+
+                <button className="btn btn-secondary mx-3" onClick={this.eliminar}>Eliminar</button>
 
             </div>
         )
