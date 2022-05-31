@@ -1,24 +1,20 @@
+import React from 'react';
 import './NavBar.css';
-import CartWidget from '../cartWidget/cartWidget';
+import Container from 'react-bootstrap/Container';
+import Navbar from 'react-bootstrap/Navbar';
 
-const NavBar = () => {
+function NavBar () {
     return (
-        
-        <nav className='nav-enlace'>
-            <h1>CoderJS</h1>
-            
-            <div className='botones'>
-                <button>Celulares</button>
-                <button>Indumentaria</button>
-                <button>Electronica</button>
-            
-            
-            </div>
-            
-            <CartWidget />
-            
-        </nav>
-        
+        <Navbar bg="light" expand="lg">
+        <Container>
+          <Navbar fixed="top" />
+          <Navbar.Brand href="#home">React Market</Navbar.Brand>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+          
+    </Navbar.Collapse>
+    </Container>
+</Navbar>
     )
 }
 
