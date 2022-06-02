@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react"
-import { getProductos } from "../../utils/productos";
+import { getProductosById } from "../../utils/productos";
+import ItemDetail from "../itemDetail/itemDetail";
+
 
 
 const ItemDetailContainer = () => {
@@ -7,8 +9,8 @@ const ItemDetailContainer = () => {
     const [productos, setProductos] = useState([]);
    
     useEffect(() => {
-        getProductos().then(resultado => {
-            setProductos(resultado)
+        getProductosById().then(response => {
+            setProductos(response)
         })
     }, []);
 
@@ -16,7 +18,7 @@ const ItemDetailContainer = () => {
     
     return (
         <div className='itemDetailContainer'>
-            <ItemDetailContainer productos = {productos.descripcion}/>
+            <ItemDetail title={productos?.descripcion} />
             </div>
     )
 }
