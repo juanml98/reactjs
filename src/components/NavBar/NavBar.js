@@ -13,6 +13,8 @@ function NavBar () {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
 
+            <div className='Categorias'>
+
           <Nav className="justify-content-end" activeKey="/home">
        <Nav.Item>
       <Nav.Link href="/home">Inicio</Nav.Link>
@@ -29,9 +31,10 @@ function NavBar () {
       </Nav.Link>
     </Nav.Item>
   </Nav>
-          
+       </div>   
     </Navbar.Collapse>
     </Container>
+    
 </Navbar>
     )
 }
